@@ -1,0 +1,16 @@
+.board{
+    display: table;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.board > * {
+    display: table-row;
+}
+
+.board .cell {
+    display: table-cell;
+    width: 9%;
+}
+
