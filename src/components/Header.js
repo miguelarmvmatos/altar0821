@@ -15,6 +15,11 @@ function Header() {
             <p>Payments</p>
           </Link>
         </li>
+        <li>
+          <Link to="test">
+            <p>Test</p>
+          </Link>
+        </li>
       </ul>
     </div>
   );
