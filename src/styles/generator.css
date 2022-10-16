@@ -1,0 +1,28 @@
+.generator{
+    display: flex;
+    flex-direction: column;
+}
+
+.generator > *{
+    flex-basis: 100%;
+}
+
+.generator_top {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.generator_top > * {
+    width: 150px;
+}
+
+.generator_bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    text-align: center;
+}

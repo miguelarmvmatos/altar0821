@@ -1,0 +1,46 @@
+.board{
+    display: table;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.board > * {
+    display: table-row;
+}
+
+.board  .board_header div:first-child{
+    border-bottom: 2px solid #fff;
+}
+
+.board  .board_header .cell{
+    background-color: rgb(115, 147, 179);
+    color: #fff;
+    border-right: 2px solid #fff;
+}
+
+.board  .board_header .cell:last-child{
+    border-right: 2px solid rgb(115, 147, 179);
+}
+
+.board .table_row :first-child{
+    background-color: rgb(115, 147, 179);
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.board .table_row:last-child :first-child{
+    border-bottom: 2px solid rgb(115, 147, 179);
+}
+
+.board .cell {
+    display: table-cell;
+    width: 9%;
+    border: 2px solid rgb(115, 147, 179);
+    padding: 10px;
+    text-align: center;
+}
+
+
