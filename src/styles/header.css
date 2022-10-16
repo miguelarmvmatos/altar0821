@@ -1,0 +1,30 @@
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: rgb(115, 147, 179);
+    font-weight: 500;
+    transition: .2s ease-in-out;
+}
+
+.menu ul li a:hover{
+    color: rgba(115, 147, 179, .6);
+}

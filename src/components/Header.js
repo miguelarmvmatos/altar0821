@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "../styles/header.css";
+
 function Header() {
   return (
     <div className="menu">
@@ -13,11 +15,6 @@ function Header() {
         <li>
           <Link to="payments">
             <p>Payments</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="test">
-            <p>Test</p>
           </Link>
         </li>
       </ul>

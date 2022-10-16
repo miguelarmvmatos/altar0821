@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Generator from "./routes/Generator";
 import Payments from "./routes/Payments";
-import Test from "./routes/Test";
+import Generator from "./routes/Generator";
 
 import "./styles/app.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -65,12 +64,21 @@ function App() {
 
   console.log("app", grid, showBoard, code);
 
+  useEffect(() => {
+    if (showBoard) {
+      setTimeout(function () {
+        setShowBoard(false);
+        setGrid(generateGrid());
+        setShowBoard(true);
+      }, 2000);
+    }
+  }, [grid]);
+
   return (
     <div className="app">
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="generator" element={<Generator />} />
           <Route
             path="payments"
             element={
@@ -84,14 +92,15 @@ function App() {
             }
           />
           <Route
-            path="test"
+            path="generator"
             element={
-              <Test
+              <Generator
                 setGrid={setGrid}
                 grid={grid}
                 setShowBoard={setShowBoard}
                 showBoard={showBoard}
                 seconds={seconds}
+                code={code}
               />
             }
           />

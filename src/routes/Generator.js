@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Board from "../components/Board";
 import Clock from "../components/Clock";
@@ -18,36 +18,28 @@ const generateGrid = (size = 10) => {
   });
 };
 
-function Generator() {
-  const [showBoard, setShowBoard] = useState(false);
-  const [customLetter, setCustomLetter] = useState();
-  const [grid, setGrid] = useState();
-
-  const d = new Date();
-  const s = d.getSeconds();
+function Generator(props) {
   function handleClick() {
-    setShowBoard(false);
-
-    setTimeout(function () {
-      setGrid(generateGrid());
-      setShowBoard(true);
-    }, 5);
+    props.setGrid(generateGrid());
+    props.setShowBoard(true);
+    console.log(props);
   }
-  useState(() => {
-    console.log("showboard", showBoard);
-    setGrid(generateGrid());
-  }, []);
   return (
     <div className="generator">
-      <input
-        type="text"
-        placeholder="Type"
-        onChange={(e) => setCustomLetter(e.target.value)}
-      />
-      <button onClick={handleClick}>Click</button>
-      <Clock />
-      {showBoard && (
-        <Board grid={grid} seconds={s} customLetter={customLetter} />
+      <div className="generator_top">
+        <Clock />
+        <button onClick={handleClick}>Create 2D Grid</button>
+      </div>
+      {props.showBoard && (
+        <Board grid={props.grid} seconds={props.seconds} code={props.code} />
+      )}
+      {props.showBoard && (
+        <div className="generator_bottom">
+          <p>
+            <span className="live"></span>Live
+          </p>
+          <div className="code_now">Your code now: {props.code}</div>
+        </div>
       )}
     </div>
   );
